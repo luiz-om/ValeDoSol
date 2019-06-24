@@ -9,7 +9,7 @@ namespace ValeDoSolFinal_1.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(ValeDoSolFinal_1.Context.Context context)
