@@ -75,10 +75,18 @@ namespace ValeDoSolFinal_1.Controllers
 
                 var consumo = new Consumo();
                 consumo.Leitura = leitura;
-                
-                
+
+                // Query for the Blog named ADO.NET Blog
+                var ConsumoAntigo = db2.Leitura 
+                                .Where(b => b.NumeroLeitura == leitura.LoteId)
+                                .FirstOrDefault();
+
+                if (ConsumoAntigo == null)
+                {
+                    consumo.Valor = (leitura.NumeroLeitura) * 0.71;
+                }
                 //Essa parte que faz a conta apra salvar o consumo
-                consumo.Valor =( leitura.NumeroLeitura) * 0.71;
+                consumo.Valor =(leitura.NumeroLeitura - ConsumoAntigo.NumeroLeitura ) * 0.71;
                 db.Leitura.Add(leitura);
                 db.Consumo.Add(consumo);
                 db.SaveChanges();

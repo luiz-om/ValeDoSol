@@ -25,9 +25,6 @@ namespace ValeDoSolFinal_1.Models
 
         public virtual Consumo Consumo { get; set; }
 
-       
-
-
-       
+        
     }
 }
