@@ -167,16 +167,38 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Context\Context.cs" />
+    <Compile Include="Context\Context2.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ConsumoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LeiturasController.cs" />
+    <Compile Include="Controllers\LotesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906241921526_Relacionamento1N.cs" />
+    <Compile Include="Migrations\201906241921526_Relacionamento1N.Designer.cs">
+      <DependentUpon>201906241921526_Relacionamento1N.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906241947176_AlteracaoNomeTabelas.cs" />
+    <Compile Include="Migrations\201906241947176_AlteracaoNomeTabelas.Designer.cs">
+      <DependentUpon>201906241947176_AlteracaoNomeTabelas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906242013453_teste1x1.cs" />
+    <Compile Include="Migrations\201906242013453_teste1x1.Designer.cs">
+      <DependentUpon>201906242013453_teste1x1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906242043155_AceitandoNuloData.cs" />
+    <Compile Include="Migrations\201906242043155_AceitandoNuloData.Designer.cs">
+      <DependentUpon>201906242043155_AceitandoNuloData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Consumo.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Leitura.cs" />
+    <Compile Include="Models\Lote.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -237,6 +259,22 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Lotes\Create.cshtml" />
+    <Content Include="Views\Lotes\Delete.cshtml" />
+    <Content Include="Views\Lotes\Details.cshtml" />
+    <Content Include="Views\Lotes\Edit.cshtml" />
+    <Content Include="Views\Lotes\Index.cshtml" />
+    <Content Include="Views\Leituras\Create.cshtml" />
+    <Content Include="Views\Leituras\Delete.cshtml" />
+    <Content Include="Views\Leituras\Details.cshtml" />
+    <Content Include="Views\Leituras\Edit.cshtml" />
+    <Content Include="Views\Leituras\Index.cshtml" />
+    <Content Include="Views\Consumoes\Create.cshtml" />
+    <Content Include="Views\Consumoes\Delete.cshtml" />
+    <Content Include="Views\Consumoes\Details.cshtml" />
+    <Content Include="Views\Consumoes\Edit.cshtml" />
+    <Content Include="Views\Consumoes\Index.cshtml" />
+    <Content Include="Views\Shared\_page.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -253,6 +291,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201906241921526_Relacionamento1N.resx">
+      <DependentUpon>201906241921526_Relacionamento1N.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906241947176_AlteracaoNomeTabelas.resx">
+      <DependentUpon>201906241947176_AlteracaoNomeTabelas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906242013453_teste1x1.resx">
+      <DependentUpon>201906242013453_teste1x1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906242043155_AceitandoNuloData.resx">
+      <DependentUpon>201906242043155_AceitandoNuloData.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

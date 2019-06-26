@@ -1,0 +1,42 @@
+﻿@model ValeDoSolFinal_1.Models.Lote
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Lote</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CPF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CPF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Socio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Socio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cavalete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cavalete)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

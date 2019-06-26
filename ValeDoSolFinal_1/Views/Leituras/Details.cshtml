@@ -1,0 +1,42 @@
+﻿@model ValeDoSolFinal_1.Models.Leitura
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Leitura</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Lote.CPF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lote.CPF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataLeitura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataLeitura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroLeitura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroLeitura)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -113,3 +113,8 @@ C:\Users\luizf\source\repos\ValeDoSolFinal_1\ValeDoSolFinal_1\obj\Debug\ValeDoSo
 C:\Users\luizf\source\repos\ValeDoSolFinal_1\ValeDoSolFinal_1\obj\Debug\ValeDoSolFinal_1.csproj.CopyComplete
 C:\Users\luizf\source\repos\ValeDoSolFinal_1\ValeDoSolFinal_1\obj\Debug\ValeDoSolFinal_1.dll
 C:\Users\luizf\source\repos\ValeDoSolFinal_1\ValeDoSolFinal_1\obj\Debug\ValeDoSolFinal_1.pdb
+C:\Users\luizf\source\repos\ValeDoSolFinal_1\ValeDoSolFinal_1\obj\Debug\ValeDoSolFinal_1.Migrations.Relacionamento1N.resources
+C:\Users\luizf\source\repos\ValeDoSolFinal_1\ValeDoSolFinal_1\obj\Debug\ValeDoSolFinal_1.csproj.GenerateResource.cache
+C:\Users\luizf\source\repos\ValeDoSolFinal_1\ValeDoSolFinal_1\obj\Debug\ValeDoSolFinal_1.Migrations.AlteracaoNomeTabelas.resources
+C:\Users\luizf\source\repos\ValeDoSolFinal_1\ValeDoSolFinal_1\obj\Debug\ValeDoSolFinal_1.Migrations.teste1x1.resources
+C:\Users\luizf\source\repos\ValeDoSolFinal_1\ValeDoSolFinal_1\obj\Debug\ValeDoSolFinal_1.Migrations.AceitandoNuloData.resources
