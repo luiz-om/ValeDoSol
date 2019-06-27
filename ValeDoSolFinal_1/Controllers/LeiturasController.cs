@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -46,8 +47,7 @@ namespace ValeDoSolFinal_1.Controllers
         public ActionResult Create()
         {
             ViewBag.LoteId = new SelectList(db.Lote, "Id", "Id");
-            ViewBag.ConsumoAntigo = new SelectList(db.Leitura, "id", "NumeroLeitura");
-
+            
             return View();
         }
 
@@ -56,37 +56,34 @@ namespace ValeDoSolFinal_1.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,LoteId,DataLeitura,NumeroLeitura")] Leitura leitura)
+        public ActionResult Create(Leitura leitura)
         {
             //[Bind(Include = "Id,LoteId,DataLeitura,NumeroLeitura")] 
             if (ModelState.IsValid)
             {
-                //aki tudo que ja tentei
-                /*
-                 *  var leitura2 = from l in db.Leitura select l;
-                 leitura2 = leitura2.OrderByDescending(l => l.Id);
-                 db.Leitura.Where(l => l.LoteId == leitura.LoteId).OrderByDescending(l=> l.NumeroLeitura);
-                 // db.Leitura.leitura2.NumeroLeitura = db.Leitura.Where(l => l.LoteId == leitura.LoteId).FirstAsync;
-                //  db2.Leitura.Find(leitura2.LoteId).;
-                var sql =  db.Leitura.SqlQuery("select ID from Leitura Order by ID DESC;");
-                 */
-                //int n = Convert.ToInt32(ViewBag.ConsumoAntigo = new SelectList(db.Leitura.OrderByDescending(l => l.LoteId)));
+               
 
 
                 var consumo = new Consumo();
                 consumo.Leitura = leitura;
-
+                
                 // Query for the Blog named ADO.NET Blog
-                var ConsumoAntigo = db2.Leitura 
-                                .Where(b => b.NumeroLeitura == leitura.LoteId)
-                                .FirstOrDefault();
+                var ConsumoAntigo = db2.Leitura.SqlQuery("select * from dbo.Leitura  where loteid = @id order by id desc",
+                    new SqlParameter("@id",leitura.LoteId)).FirstOrDefault();
+              
+                
+                
 
-                if (ConsumoAntigo == null)
+                if (ConsumoAntigo==null)
                 {
                     consumo.Valor = (leitura.NumeroLeitura) * 0.71;
                 }
+                else
+                {
+                    consumo.Valor = (leitura.NumeroLeitura - ConsumoAntigo.NumeroLeitura) * 0.71;
+                }
                 //Essa parte que faz a conta apra salvar o consumo
-                consumo.Valor =(leitura.NumeroLeitura - ConsumoAntigo.NumeroLeitura ) * 0.71;
+               
                 db.Leitura.Add(leitura);
                 db.Consumo.Add(consumo);
                 db.SaveChanges();
